@@ -23,7 +23,7 @@ public class Cuota {
     private Double montoPagado;
     private Boolean pagado;
     
-    @OneToMany(mappedBy = "cuota", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "cuota", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<Voucher> vouchers;
 }
